@@ -32,6 +32,7 @@ class Controller:
         """Callback per il pulsante 'Conta Archi'."""
         try:
             soglia = float(self._view.txt_soglia.value)
+            self.soglia = soglia
         except:
             self._view.show_alert("Inserisci un numero valido per la soglia.")
             return
@@ -47,5 +48,13 @@ class Controller:
         self._view.page.update()
 
     """Implementare la parte di ricerca del cammino minimo"""
-    # TODO
+    def handle_cammino_minimo(self, e):
+        #print("controller")
+        self._model.shortest_path_recursive(self.soglia)
+        self._view.lista_visualizzazione_3.controls.clear()
+
+        for edge in self._model.sol_best_edges:
+            self._view.lista_visualizzazione_3.controls.append(ft.Text(f"{edge}"))
+
+        self._view.page.update()
 
