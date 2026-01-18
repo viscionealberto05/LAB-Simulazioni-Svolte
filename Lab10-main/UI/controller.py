@@ -16,5 +16,10 @@ class Controller:
         * Numero di Tratte
         * Lista di Tratte che superano il costo indicato come soglia
         """
-        # TODO
+        try:
+            self.soglia = int(self._view.guadagno_medio_minimo.value)
+            self._model.costruisci_grafo(self.soglia)
+
+        except ValueError:
+            self._view.alert.show_alert("Inserisci un valore valido.")
 
