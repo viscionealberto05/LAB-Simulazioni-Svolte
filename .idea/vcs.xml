@@ -2,5 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SE_BikeStore_main" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SE_iTunes_main" vcs="Git" />
   </component>
 </project>
